@@ -1,16 +1,9 @@
-
-
-
-
-
-
-/* 헤더 스타일 */
-h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+header{
+    display: flex;
+    width: 100%;
+    height: 300px;
+    border: 2px solid #ff0000;
 }
-
 /* 드롭다운과 입력 필드 스타일 */
 div select,
 div input {
@@ -34,7 +27,8 @@ input {
 
 /* 버튼 스타일 */
 button {
-    background-color: #3498db; /* 파란색 */
+    background-color: #3498db;
+    /* 파란색 */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -46,11 +40,19 @@ button {
 }
 
 button:hover {
-    background-color: #2980b9; /* 진한 파란색 */
+    background-color: #2980b9;
+    /* 진한 파란색 */
 }
 
 /* 버튼 정렬 */
 div div {
     text-align: center;
     margin-top: 20px;
+}
+
+.headerleft {
+    width: 15%;
+    border: 2px solid #ff0000;
+    /* 두께 2px, 실선, 검은색 */
+
 }
