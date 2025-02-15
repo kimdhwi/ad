@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 
     <link rel="stylesheet" href="css/header.css">
 
-<link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reset.css">
     <meta charset="UTF-8">
     <title>Include Example</title>
     <script>
@@ -19,10 +20,10 @@
                 if (file) {
                     /* HTTP 요청을 준비합니다: */
                     xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function() {
+                    xhttp.onreadystatechange = function () {
                         if (this.readyState == 4) {
-                            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
                             /* 속성을 제거하고 재귀적으로 함수를 호출합니다: */
                             elmnt.removeAttribute("include-html");
                             includeHTML();
@@ -38,26 +39,34 @@
     </script>
     <style>
         body {
-    background-image: url('/img/3.jpg');
-    background-repeat: no-repeat; /* 이미지 반복 안 함 */
-    background-size: cover; /* 배경 이미지가 요소를 완전히 덮도록 크기 조절 */
-    background-position: center; /* 배경 이미지 중앙 정렬 */
-}
+            background-image: url('/img/3.jpg');
+            background-repeat: no-repeat;
+            /* 이미지 반복 안 함 */
+            background-size: cover;
+            /* 배경 이미지가 요소를 완전히 덮도록 크기 조절 */
+            background-position: center;
+            /* 배경 이미지 중앙 정렬 */
+
+            background-color: rosybrown;
+        }
     </style>
 </head>
+
 <body onload="includeHTML()">
 
     <div include-html="html/header.html"></div>
 
     <div include-html="html/header1.html"></div>
 
-    <h1>메인 콘텐츠</h1>
-    <p>여기에 본문 내용이 들어갑니다.</p>
+    <div class="index">
+        <h1>메인 콘텐츠</h1>
+        <p>여기에 본문 내용이 들어갑니다.</p>
+    </div>
 
-    
 
 
-    <div include-html="footer.html"></div>
+    <div include-html="html/footer.html"></div>
 
 </body>
+
 </html>

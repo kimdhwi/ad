@@ -47,12 +47,23 @@ button:hover {
 /* 버튼 정렬 */
 div div {
     text-align: center;
-    margin-top: 20px;
+    display: flex;
 }
 
 .headerleft {
-    width: 15%;
+    width: 25%;
     border: 2px solid #ff0000;
     /* 두께 2px, 실선, 검은색 */
+    font-size: 40px;
 
+}
+.headercenter{
+    width: 50%;
+    border: 2px solid #ff0000;
+    
+}
+.headerright{
+    width: 25%;
+    border: 2px solid #ff0000;
+    
 }
