@@ -2,24 +2,56 @@
 <link rel="stylesheet" href="css/reset.css">
 <script src="js/portfolio.js"></script>
 
-<div class="page page1">
-    <div class="portfolio0">
-        <p>제 2의 새로운 선택</p>
-        <p>개발자의 봄</p>
-        
-    </div>
+<script>
+    // 모든 include-html 속성을 가진 div 요소를 찾고 로드하는 함수
+    function includeHTML() {
+        const elements = document.querySelectorAll('[include-html]');
+        elements.forEach(element => {
+            const file = element.getAttribute("include-html"); // 속성에서 파일 경로를 가져옴
+            if (file) {
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", file, true);
+                xhr.onload = function() {
+                    if (xhr.status == 200) {
+                        element.innerHTML = xhr.responseText; // 파일 내용을 해당 div에 삽입
+                    } else {
+                        console.error("파일을 불러오는 데 실패했습니다.");
+                    }
+                };
+                xhr.send();
+            }
+        });
+    }
 
-    <div class="image-container">
-        <img src="/img/portfolio1.png" alt="소개">
-    </div>
-</div>
+    // 페이지 로딩 시 includeHTML 함수 호출
+    window.onload = includeHTML;
+</script>
 
-<div class="page page2">
-    <div class="portfolio0">
-        <p>두 번째 페이지 섹션</p>
-    </div>
+<body>
+    <div class="portfoliobody">
+        <!-- HTML 파일을 동적으로 로드할 위치 -->
+        <div include-html="/html/portfolioheader.html"></div>
 
-    <div class="image-container">
-        <img src="/img/portfolio2.png" alt="두 번째 소개">
+        <div class="page page1">
+            <div class="portfolio0">
+                <img src="/img/2.jpg" alt="소개">
+                <p>제 2의 새로운 선택</p>
+                <p>개발자의 봄</p>
+            </div>
+
+            <div class="image-container">
+                
+            </div>
+        </div>
+
+        <div class="page page2">
+            <div class="portfolio0">
+                <p>두 번째 페이지 섹션</p>
+            </div>
+
+            <div class="image-container">
+                <img src="/img/portfolio2.png" alt="두 번째 소개">
+            </div>
+        </div>
     </div>
-</div>
+</body>
