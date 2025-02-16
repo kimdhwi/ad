@@ -48,7 +48,9 @@ button:hover {
 div div {
     text-align: center;
     display: flex;
+    
 }
+
 
 .headerleft {
     width: 25%;
