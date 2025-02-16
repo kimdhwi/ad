@@ -22,3 +22,19 @@ window.addEventListener('wheel', (e) => {
 
 
 
+window.onscroll = function() {
+    let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      scrollToTopBtn.style.display = "block"; // 200px 이상 스크롤되면 버튼 보이기
+    } else {
+      scrollToTopBtn.style.display = "none"; // 그 이하일 경우 버튼 숨기기
+    }
+  };
+
+  // 페이지 맨 위로 스크롤하는 함수
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // 부드러운 스크롤
+    });
+  }
