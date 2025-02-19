@@ -1,22 +1,37 @@
-<link rel="stylesheet" href="/css/body.css">
-<link rel="stylesheet" href="/css/reset.css">
-<script src="/js/body.js"></script>
+<link rel="stylesheet" href="css/body.css">
+<link rel="stylesheet" href="css/reset.css">
+<script src="js/body.js"></script>
 
 
 
 
-  <div class="q0">
+<div class="q0">
     <div class="q1">
-      <input type="number" id="qq1" placeholder="현재 금액">
-      <input type="number" id="qq2" placeholder="결정 금액">
-      <button onclick="q0()" class="button1">확인</button>
+        <input type="number" id="qq1" placeholder="현재 금액">
+        <input type="number" id="qq2" placeholder="결정 금액">
+        <button onclick="q0()" class="button1">확인</button>
     </div>
+
 
     <div id="q1">
-      <textarea name="" id="qq3" cols="30" rows="2" readonly></textarea><br>
-      <textarea name="" id="qq4" cols="30" rows="2" readonly></textarea><br>
-      <textarea name="" id="qq5" cols="30" rows="2" readonly></textarea><br>
+        <textarea name="" id="qq3" cols="30" rows="2" readonly></textarea><br>
+        <textarea name="" id="qq4" cols="30" rows="2" readonly></textarea><br>
+        <textarea name="" id="qq5" cols="30" rows="2" readonly></textarea><br>
     </div>
 
-  </div>
+</div>
 
+
+<script>
+    document.getElementById('qq1').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {  // Enter 키가 눌렸을 때
+      q0();  // q0() 함수 호출
+    }
+  });
+
+  document.getElementById('qq2').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {  // Enter 키가 눌렸을 때
+      q0();  // q0() 함수 호출
+    }
+  });
+</script>

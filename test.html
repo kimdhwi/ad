@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>금액 비례 계산기</title>
+  <style>
+    /* 기본 스타일은 그대로 유지 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .q0 {
+      width: 400px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .q1 {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .q1 input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .q1 input:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    button {
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="q0">
+    <div class="q1">
+      <input type="number" id="qq1" placeholder="현재 금액">
+      <input type="number" id="qq2" placeholder="결정 금액">
+      <button onclick="q0()" class="button1">확인</button>
+    </div>
+  </div>
+
+  <script>
+    // 엔터 키를 눌렀을 때 확인 버튼 동작을 실행하도록 설정
+    document.getElementById('qq1').addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {  // Enter 키가 눌렸을 때
+        q0();  // q0() 함수 호출
+      }
+    });
+
+    document.getElementById('qq2').addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {  // Enter 키가 눌렸을 때
+        q0();  // q0() 함수 호출
+      }
+    });
+
+    // q0() 함수 정의 (기존 로직 그대로)
+    function q0() {
+      let a1 = document.getElementById("qq1").value;
+      let a2 = document.getElementById("qq2").value;
+
+      // 값이 비어있는지 확인
+      if (a1 === "" || a2 === "") {
+        alert("모든 필드를 입력해주세요.");
+        return;
+      }
+
+      let aa1 = (((a2 / a1) * 100) / 12).toFixed(1);  // 매월 비율
+      let aa2 = (((a2 / a1) * 100) / 4).toFixed(1);   // 분기 비율
+      let aa3 = (((a2 / a1) * 100)).toFixed(1);       // 매년 비율
+
+      alert("매월: " + aa1 + "%\n분기: " + aa2 + "%\n매년: " + aa3 + "%");
+    }
+  </script>
+
+</body>
+</html>
