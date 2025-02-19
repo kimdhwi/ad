@@ -1,0 +1,73 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* 콘텐츠 영역 */
+.q0 {
+  width: 400px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.q1 {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+}
+.q1 input {
+    padding: 10px;
+    font-size: 18px;
+    border: 3px solid #C7B;
+    border-radius: 10px;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.q1 input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.button1 {
+    
+  padding: 12px;
+  background-color: #1F5E6D;
+  ;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button1:hover {
+  background-color: #45a049;
+}
+
+/* 결과 영역 */
+#q1 textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+#q1 textarea[readonly] {
+  background-color: #e9ecef;
+  color: #495057;
+}

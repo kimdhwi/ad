@@ -1,28 +1,11 @@
-header{
+.header{
     display: flex;
     width: 100%;
-    height: 300px;
+    height: 80px;
     border: 2px solid #ff0000;
-}
-/* 드롭다운과 입력 필드 스타일 */
-div select,
-div input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px;
-}
+    background-color: black;
 
-/* 드롭다운 */
-select {
-    background-color: white;
-    cursor: pointer;
-}
 
-/* 입력 필드 */
-input {
-    width: 200px;
 }
 
 /* 버튼 스타일 */
@@ -44,28 +27,26 @@ button:hover {
     /* 진한 파란색 */
 }
 
-/* 버튼 정렬 */
-div div {
-    text-align: center;
-    display: flex;
-    
-}
-
-
 .headerleft {
     width: 25%;
     border: 2px solid #ff0000;
-    /* 두께 2px, 실선, 검은색 */
-    font-size: 40px;
-
+    font-size: 60px;
+    color: white;
+    align-content: center;
+    height: 100%;
+    
 }
 .headercenter{
     width: 50%;
     border: 2px solid #ff0000;
+    color: white;
+    align-content: center;
+    height: 100%;
     
 }
 .headerright{
     width: 25%;
     border: 2px solid #ff0000;
-    
+    align-content: center;
+    height: 100%;
 }
